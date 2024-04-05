@@ -31,7 +31,6 @@ public class App
         MapController mapController = new MapController(cardMap);
         UserController userController = new UserController(new HashMap<>());
 
-        // Menú de la aplicación
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {
@@ -49,13 +48,12 @@ public class App
             switch (choice) {
                 case 1:
                     System.out.print("Ingrese el nombre de la carta que desea agregar: ");
-                    scanner.nextLine(); // Consume la nueva línea
+                    scanner.nextLine(); 
                     String cardName = scanner.nextLine();
-                    // Obtener la carta del mapa usando el nombre
                     long startAddTime = System.nanoTime();
                     Card cardToAdd = cardMap.get(cardName);
                     if (cardToAdd != null) {
-                        mapController.addCard(cardName, cardToAdd); // Agregar la carta al mapa y al usuario
+                        mapController.addCard(cardName, cardToAdd);
                         userController.addCard(cardName);
                         long endAddTime = System.nanoTime();
                         long addTime = endAddTime - startAddTime;
@@ -64,9 +62,10 @@ public class App
                     } else {
                         System.out.println("Error: La carta no existe en la lista de cartas disponibles.");
                     }
+                    break;
                 case 2:
                     System.out.print("Ingrese el nombre de la carta: ");
-                    scanner.nextLine(); // Consume la nueva línea
+                    scanner.nextLine();
                     cardName = scanner.nextLine();
                     long startGetTypeTime = System.nanoTime();
                     String cardType = mapController.getCardType(cardName);
