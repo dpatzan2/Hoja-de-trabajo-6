@@ -9,7 +9,6 @@ public class Card {
         this.type = type;
     }
 
-    // Getters y setters
     public String getName() {
         return name;
     }

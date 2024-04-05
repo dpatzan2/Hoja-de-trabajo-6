@@ -5,7 +5,6 @@ import uvg.edu.gt.model.Card;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -33,6 +32,4 @@ public class CardService {
             e.printStackTrace();
         }
     }
-
-    // Otros métodos para operaciones con cartas
 }
